@@ -1,5 +1,6 @@
 import json
 import random
+from collections import deque
 from intro import *
 
 ###     [INSTRUCTION 3: Maze should be a perfect one ; Use a recursive backtrack ]
@@ -9,7 +10,7 @@ start_x, start_y = 1, 1
 lab[start_y][start_x] = "."
 
 # initialize neighbor to save each cell already visited
-line_up = [(start_x, start_y)]
+line_up = deque([(start_x, start_y)])
 
 # create the function for DFS (Deep First Search)
 
