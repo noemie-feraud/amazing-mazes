@@ -10,6 +10,7 @@ size = 2 * n + 1  # grid size is always (2n + 1)
 
 wall, empty = "#", "."
 # wall = # = ASCII 35 , empty=.=46
+
 # create the full grid
 lab = [[wall for _ in range(size)] for _ in range(size)]
 
