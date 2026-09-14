@@ -1,36 +1,28 @@
 import json
 
-###   [ CONSIGNE 1 : L'utilisateur détermine la taille de la matrice du Lab ]      ###
+###   [ INSTRUCTION 1 : The user determines the size of the Lab matrix ]      ###
 
-taille_matrice = int(input("Definir la taille du labyrinthe : "))
+matrix_size = int(input("Define the size of the maze : "))
 
-# input l'utilisateur choisit un entier  N qui définit la taille de la matrice n*n
+# input The user chooses an integer N which defines the size of the matrix
 
-if taille_matrice <= 1:
+if matrix_size <= 1:
     print("Choisir un entier supérieur à 1")
-# on évite les erreurs si l'utilisateur choisit un entier inférieur ou égal à 1
+# errors if the user chooses an integer less than or equal to 1
 else:
-    lab = [["#" for n in range(taille_matrice)] for n in range(taille_matrice)]
-# on set avec la matrice n*n rempli de # autant de fois que demandé
+    lab = [["#" for n in range(matrix_size)] for n in range(matrix_size)]
+# set the matrix n*n fill with # as many forse as requested
 
-for ligne in lab:
-    print(" ".join(ligne))
-# join : colle les elements d une liste pour faire une seule str
-
-
-###     [  CONSIGNE 2 : L' utilisateur crée son fichier json, le labyrinthe apparait dedans  ]      ###
+for line in lab:
+    print(" ".join(line))
+# join : takes the elements of a list to make a single string
 
 
-# utilisateur choix nom de fichier
+###     [  INSTRUCTION 2 : The user creates their TXT file, the maze appears in it  ]      ###
 
-nom_fichier = input("Définir un nom de fichier ")
-if not nom_fichier.endswith(".json"):
-    nom_fichier += ".json"
 
-lab_json = [" ".join(ligne) for ligne in lab]
-# affichage pour json, transforme la liste en chaine texte
+# User choose a filename
 
-with open(nom_fichier, "w", encoding="utf-8") as f:
-    json.dump(lab_json, f, ensure_ascii=False, indent=1)
-
-print(f"Labyrinthe crée dans votre fichier {nom_fichier}")
+filename = input("Définir un nom de fichier ")
+if not filename.endswith(".txt"):
+    filename += ".txt"
