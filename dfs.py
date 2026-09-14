@@ -46,6 +46,22 @@ while len(line_up) > 0:
     else:
         line_up.pop()  # backtracking changing position in line up search and choose a new cell
 
+
+### [   INSTRUCTION 4 : The entrance is located in the upper left and the exit in the lower right, in all cases   ]
+
+# numbers in user's input  must be odd to get the good entrance because :
+# 1) DFS need to have 2 choice in the tree to go deeper
+# 2) available digits are 1,3,5,7 ......
+
+# entrance open at the position up/left
+
+lab[0][1] = "."
+
+# exit lower right
+lab[matrix_size - 1][matrix_size - 2] = "."
+# matrix_size -1 = last line bottom
+# matrix_size -2 = last column right hand size
+
 ###     [ SAVE AS JSON FILES ]      ###
 
 lab_json = [" ".join(line) for line in lab]
