@@ -95,9 +95,9 @@ def solve_with_a_star(grid, start, goal):
     #mark every explored position with *
     for row, column in explored_positions:
         solved_grid[row][column] = explored
-        #overwrite the final path with o to make it more visible
-        for row, column in path_positions:
-            solved_grid[row][column] = path
+    #overwrite the final path with o to make it more visible
+    for row, column in path_positions:
+        solved_grid[row][column] = path
     return solved_grid
 
 def read_maze(file_name):
