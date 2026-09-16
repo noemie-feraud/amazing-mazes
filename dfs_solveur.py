@@ -76,8 +76,8 @@ if found:
 
 ###     [ SAVE SOLVED MAZE TO TEXT FILE ]
 
-with open(input_file, "w", encoding="utf-8") as f:
+with open(output_file, "w", encoding="utf-8") as f:
     for line in grid:
         f.write("".join(line) + "\n")
 
-print(f"Solution saved in {input_file}")
+print(f"Solution saved in {output_file}")
