@@ -93,7 +93,7 @@ def solve_with_a_star(grid, start, goal):
     #copy th eoriginal maze so it remains unchanged
     solved_grid = [row.copy() for row in grid]
     #mark every explored position with *
-    for row, column in path_positions:
+    for row, column in explored_positions:
         solved_grid[row][column] = explored
         #overwrite the final path with o to make it more visible
         for row, column in path_positions:
